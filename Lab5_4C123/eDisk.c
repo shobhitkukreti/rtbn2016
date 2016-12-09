@@ -81,9 +81,9 @@ enum DRESULT eDisk_ReadSector(
 			return RES_PARERR;
 	 for (i=0;i<512; i++) {
 				buff[i] = *(start +i);
-				BSP_LCD_OutUHex2(buff[i], LCD_ORANGE);
+				//BSP_LCD_OutUHex2(buff[i], LCD_ORANGE);
 	 }
-	  BSP_LCD_DrawString(0, 2, "RD OK", LCD_CYAN);   
+	 // BSP_LCD_DrawString(0, 2, "RD OK", LCD_CYAN);   
 		return RES_OK;
 }
 
@@ -114,7 +114,7 @@ if(start >=EDISK_ADDR_MAX)
 					BSP_LCD_DrawString(0, 12, "eDisk_WriteSector Failed", LCD_YELLOW);
 					return RES_ERROR;
 	}
-BSP_LCD_DrawString(0, 1, "WR OK", LCD_RED); 
+//BSP_LCD_DrawString(0, 1, "WR OK", LCD_RED); 
 	return RES_OK;
 }
 
@@ -131,13 +131,12 @@ enum DRESULT eDisk_Format(void){
 // erase all flash from EDISK_ADDR_MIN to EDISK_ADDR_MAX
 // **write this function**
   uint32_t i = EDISK_ADDR_MIN;
-	int ret=0;
+	
 	for(i=EDISK_ADDR_MIN; i<=EDISK_ADDR_MAX; i=i+1024) {
-				ret = Flash_Erase(i);
-				if(ret == ERROR)
-					   BSP_LCD_DrawString(0, 8, "Disk Format", LCD_CYAN);
+				if(Flash_Erase(i)==ERROR)
+						return RES_ERROR;
 	}
 	
-	BSP_LCD_DrawString(0, 0, "FMT OK", LCD_CYAN); 
+	//BSP_LCD_DrawString(0, 0, "FMT OK", LCD_CYAN); 
   return RES_OK;
 }

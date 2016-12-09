@@ -143,9 +143,6 @@ Section Cross References
     bsp.o(i.tempsensorend) refers to bsp.o(i.I2C_Recv2) for I2C_Recv2
     bsp.o(i.tempsensorstart) refers to bsp.o(i.I2C_Send3) for I2C_Send3
     edisk.o(i.eDisk_Format) refers to flashprogram.o(i.Flash_Erase) for Flash_Erase
-    edisk.o(i.eDisk_Format) refers to bsp.o(i.BSP_LCD_DrawString) for BSP_LCD_DrawString
-    edisk.o(i.eDisk_ReadSector) refers to bsp.o(i.BSP_LCD_OutUHex2) for BSP_LCD_OutUHex2
-    edisk.o(i.eDisk_ReadSector) refers to bsp.o(i.BSP_LCD_DrawString) for BSP_LCD_DrawString
     edisk.o(i.eDisk_WriteSector) refers to flashprogram.o(i.Flash_WriteArray) for Flash_WriteArray
     edisk.o(i.eDisk_WriteSector) refers to bsp.o(i.BSP_LCD_DrawString) for BSP_LCD_DrawString
     flashprogram.o(i.Flash_Erase) refers to flashprogram.o(i.EraseAddrValid) for EraseAddrValid
@@ -162,33 +159,23 @@ Section Cross References
     lab5.o(i.DisplayDirectory) refers to lab5.o(.constdata) for ColorArray
     lab5.o(i.main) refers to startup_tm4c123.o(.text) for DisableInterrupts
     lab5.o(i.main) refers to bsp.o(i.BSP_Clock_InitFastest) for BSP_Clock_InitFastest
+    lab5.o(i.main) refers to profile.o(i.Profile_Init) for Profile_Init
+    lab5.o(i.main) refers to edisk.o(i.eDisk_Init) for eDisk_Init
     lab5.o(i.main) refers to bsp.o(i.BSP_Button1_Init) for BSP_Button1_Init
     lab5.o(i.main) refers to bsp.o(i.BSP_Button2_Init) for BSP_Button2_Init
     lab5.o(i.main) refers to bsp.o(i.BSP_LCD_Init) for BSP_LCD_Init
     lab5.o(i.main) refers to bsp.o(i.BSP_LCD_FillScreen) for BSP_LCD_FillScreen
-    lab5.o(i.main) refers to edisk.o(i.eDisk_Format) for eDisk_Format
-    lab5.o(i.main) refers to efile.o(i.lastsector) for lastsector
-    lab5.o(i.main) refers to bsp.o(i.BSP_LCD_OutUDec) for BSP_LCD_OutUDec
-    lab5.o(i.main1) refers to startup_tm4c123.o(.text) for DisableInterrupts
-    lab5.o(i.main1) refers to bsp.o(i.BSP_Clock_InitFastest) for BSP_Clock_InitFastest
-    lab5.o(i.main1) refers to profile.o(i.Profile_Init) for Profile_Init
-    lab5.o(i.main1) refers to edisk.o(i.eDisk_Init) for eDisk_Init
-    lab5.o(i.main1) refers to bsp.o(i.BSP_Button1_Init) for BSP_Button1_Init
-    lab5.o(i.main1) refers to bsp.o(i.BSP_Button2_Init) for BSP_Button2_Init
-    lab5.o(i.main1) refers to bsp.o(i.BSP_LCD_Init) for BSP_LCD_Init
-    lab5.o(i.main1) refers to bsp.o(i.BSP_LCD_FillScreen) for BSP_LCD_FillScreen
-    lab5.o(i.main1) refers to bsp.o(i.BSP_Button1_Input) for BSP_Button1_Input
-    lab5.o(i.main1) refers to bsp.o(i.BSP_LCD_DrawString) for BSP_LCD_DrawString
-    lab5.o(i.main1) refers to texas.o(i.TExaS_Init) for TExaS_Init
-    lab5.o(i.main1) refers to bsp.o(i.BSP_Button2_Input) for BSP_Button2_Input
-    lab5.o(i.main1) refers to efile.o(i.OS_File_Format) for OS_File_Format
-    lab5.o(i.main1) refers to efile.o(i.OS_File_New) for OS_File_New
-    lab5.o(i.main1) refers to lab5.o(i.testbuildbuff) for testbuildbuff
-    lab5.o(i.main1) refers to efile.o(i.OS_File_Append) for OS_File_Append
-    lab5.o(i.main1) refers to efile.o(i.OS_File_Size) for OS_File_Size
-    lab5.o(i.main1) refers to efile.o(i.OS_File_Flush) for OS_File_Flush
-    lab5.o(i.main1) refers to lab5.o(i.DisplayDirectory) for DisplayDirectory
-    lab5.o(i.main1) refers to efile.o(.bss) for Buff
+    lab5.o(i.main) refers to bsp.o(i.BSP_Button1_Input) for BSP_Button1_Input
+    lab5.o(i.main) refers to bsp.o(i.BSP_LCD_DrawString) for BSP_LCD_DrawString
+    lab5.o(i.main) refers to texas.o(i.TExaS_Init) for TExaS_Init
+    lab5.o(i.main) refers to bsp.o(i.BSP_Button2_Input) for BSP_Button2_Input
+    lab5.o(i.main) refers to efile.o(i.OS_File_New) for OS_File_New
+    lab5.o(i.main) refers to lab5.o(i.testbuildbuff) for testbuildbuff
+    lab5.o(i.main) refers to efile.o(i.OS_File_Append) for OS_File_Append
+    lab5.o(i.main) refers to efile.o(i.OS_File_Size) for OS_File_Size
+    lab5.o(i.main) refers to efile.o(i.OS_File_Flush) for OS_File_Flush
+    lab5.o(i.main) refers to lab5.o(i.DisplayDirectory) for DisplayDirectory
+    lab5.o(i.main) refers to efile.o(.bss) for Buff
     lab5.o(i.main_step1) refers to startup_tm4c123.o(.text) for DisableInterrupts
     lab5.o(i.main_step1) refers to bsp.o(i.BSP_Clock_InitFastest) for BSP_Clock_InitFastest
     lab5.o(i.main_step1) refers to bsp.o(i.BSP_Button1_Init) for BSP_Button1_Init
@@ -202,11 +189,37 @@ Section Cross References
     lab5.o(i.main_step1) refers to edisk.o(i.eDisk_ReadSector) for eDisk_ReadSector
     lab5.o(i.main_step1) refers to bsp.o(i.BSP_LCD_DrawString) for BSP_LCD_DrawString
     lab5.o(i.main_step1) refers to efile.o(.bss) for Buff
+    lab5.o(i.main_step2) refers to startup_tm4c123.o(.text) for DisableInterrupts
+    lab5.o(i.main_step2) refers to bsp.o(i.BSP_Clock_InitFastest) for BSP_Clock_InitFastest
+    lab5.o(i.main_step2) refers to bsp.o(i.BSP_Button1_Init) for BSP_Button1_Init
+    lab5.o(i.main_step2) refers to bsp.o(i.BSP_Button2_Init) for BSP_Button2_Init
+    lab5.o(i.main_step2) refers to bsp.o(i.BSP_LCD_Init) for BSP_LCD_Init
+    lab5.o(i.main_step2) refers to bsp.o(i.BSP_LCD_FillScreen) for BSP_LCD_FillScreen
+    lab5.o(i.main_step2) refers to lab5.o(i.testDirectory) for testDirectory
+    lab5.o(i.main_step2) refers to efile.o(i.OS_File_Size) for OS_File_Size
+    lab5.o(i.main_step2) refers to bsp.o(i.BSP_LCD_OutUDec) for BSP_LCD_OutUDec
+    lab5.o(i.testDirectory) refers to efile.o(.bss) for Directory
     lab5.o(i.testbuildbuff) refers to efile.o(.bss) for Buff
+    efile.o(i.MountDirectory) refers to edisk.o(i.eDisk_ReadSector) for eDisk_ReadSector
+    efile.o(i.MountDirectory) refers to efile.o(.data) for bDirectoryLoaded
+    efile.o(i.MountDirectory) refers to efile.o(.bss) for Directory
+    efile.o(i.OS_File_Append) refers to efile.o(i.MountDirectory) for MountDirectory
+    efile.o(i.OS_File_Append) refers to efile.o(i.findfreesector) for findfreesector
+    efile.o(i.OS_File_Append) refers to edisk.o(i.eDisk_WriteSector) for eDisk_WriteSector
+    efile.o(i.OS_File_Append) refers to efile.o(i.appendfat) for appendfat
+    efile.o(i.OS_File_Flush) refers to edisk.o(i.eDisk_WriteSector) for eDisk_WriteSector
+    efile.o(i.OS_File_Flush) refers to efile.o(.bss) for Directory
+    efile.o(i.OS_File_Format) refers to edisk.o(i.eDisk_Format) for eDisk_Format
+    efile.o(i.OS_File_New) refers to efile.o(i.MountDirectory) for MountDirectory
     efile.o(i.OS_File_New) refers to efile.o(.bss) for Directory
+    efile.o(i.OS_File_Read) refers to edisk.o(i.eDisk_ReadSector) for eDisk_ReadSector
+    efile.o(i.OS_File_Read) refers to efile.o(.bss) for Directory
+    efile.o(i.OS_File_Size) refers to efile.o(.bss) for Directory
+    efile.o(i.appendfat) refers to efile.o(.bss) for Directory
     efile.o(i.findfreesector) refers to efile.o(i.lastsector) for lastsector
-    efile.o(i.lastsector) refers to efile.o(.bss) for Directory
-    efile.o(i.testDirectory) refers to efile.o(.bss) for Directory
+    efile.o(i.findfreesector) refers to efile.o(i.max) for max
+    efile.o(i.findfreesector) refers to efile.o(.bss) for Directory
+    efile.o(i.lastsector) refers to efile.o(.bss) for FAT
     texas.o(i.Encrypt) refers to texas.o(.bss) for MagicCode
     texas.o(i.Encrypt) refers to texas.o(.constdata) for Key
     texas.o(i.LogicAnalyzer) refers to texas.o(.data) for LogicData
@@ -394,11 +407,8 @@ Removing Unused input sections from the image.
 
     Removing bsp.o(i.BSP_Accelerometer_Init), (176 bytes).
     Removing bsp.o(i.BSP_Accelerometer_Input), (72 bytes).
-    Removing bsp.o(i.BSP_Button1_Input), (12 bytes).
-    Removing bsp.o(i.BSP_Button2_Input), (12 bytes).
     Removing bsp.o(i.BSP_Buzzer_Init), (212 bytes).
     Removing bsp.o(i.BSP_Buzzer_Set), (32 bytes).
-    Removing bsp.o(i.BSP_Clock_GetFreq), (12 bytes).
     Removing bsp.o(i.BSP_Joystick_Init), (304 bytes).
     Removing bsp.o(i.BSP_Joystick_Input), (64 bytes).
     Removing bsp.o(i.BSP_LCD_Color565), (24 bytes).
@@ -408,7 +418,7 @@ Removing Unused input sections from the image.
     Removing bsp.o(i.BSP_LCD_DrawFastVLine), (124 bytes).
     Removing bsp.o(i.BSP_LCD_DrawPixel), (72 bytes).
     Removing bsp.o(i.BSP_LCD_Drawaxes), (292 bytes).
-    Removing bsp.o(i.BSP_LCD_OutUDec4), (136 bytes).
+    Removing bsp.o(i.BSP_LCD_OutUDec), (144 bytes).
     Removing bsp.o(i.BSP_LCD_OutUDec5), (136 bytes).
     Removing bsp.o(i.BSP_LCD_OutUFix2_1), (112 bytes).
     Removing bsp.o(i.BSP_LCD_OutUHex2), (112 bytes).
@@ -438,54 +448,24 @@ Removing Unused input sections from the image.
     Removing bsp.o(i.BSP_TempSensor_Input), (60 bytes).
     Removing bsp.o(i.BSP_TempSensor_Start), (28 bytes).
     Removing bsp.o(i.BSP_Time_Get), (16 bytes).
-    Removing bsp.o(i.BSP_Time_Init), (100 bytes).
     Removing bsp.o(i.I2C_Recv2), (120 bytes).
     Removing bsp.o(i.I2C_Send1), (72 bytes).
     Removing bsp.o(i.I2C_Send3), (176 bytes).
     Removing bsp.o(i.adcinit), (76 bytes).
     Removing bsp.o(i.fillmessage2_1), (96 bytes).
     Removing bsp.o(i.fillmessage2_Hex), (84 bytes).
-    Removing bsp.o(i.fillmessage4), (100 bytes).
     Removing bsp.o(i.fillmessage5), (128 bytes).
     Removing bsp.o(i.i2cinit), (148 bytes).
     Removing bsp.o(i.lightsensorend), (80 bytes).
     Removing bsp.o(i.lightsensorstart), (36 bytes).
     Removing bsp.o(i.tempsensorend), (68 bytes).
     Removing bsp.o(i.tempsensorstart), (18 bytes).
-    Removing edisk.o(i.eDisk_Init), (12 bytes).
-    Removing edisk.o(i.eDisk_ReadSector), (92 bytes).
-    Removing edisk.o(i.eDisk_WriteSector), (120 bytes).
-    Removing flashprogram.o(i.Flash_FastWrite), (136 bytes).
     Removing flashprogram.o(i.Flash_Init), (2 bytes).
-    Removing flashprogram.o(i.Flash_Write), (104 bytes).
-    Removing flashprogram.o(i.Flash_WriteArray), (46 bytes).
-    Removing flashprogram.o(i.MassWriteAddrValid), (22 bytes).
-    Removing flashprogram.o(i.WriteAddrValid), (22 bytes).
-    Removing lab5.o(i.DisplayDirectory), (280 bytes).
-    Removing lab5.o(i.main1), (772 bytes).
     Removing lab5.o(i.main_step1), (184 bytes).
-    Removing lab5.o(i.testbuildbuff), (48 bytes).
-    Removing lab5.o(.constdata), (18 bytes).
+    Removing lab5.o(i.main_step2), (72 bytes).
+    Removing lab5.o(i.testDirectory), (56 bytes).
     Removing profile.o(i.Profile_Get), (76 bytes).
-    Removing profile.o(i.Profile_Init), (468 bytes).
-    Removing efile.o(i.MountDirectory), (2 bytes).
-    Removing efile.o(i.OS_File_Append), (6 bytes).
-    Removing efile.o(i.OS_File_Flush), (4 bytes).
-    Removing efile.o(i.OS_File_Format), (4 bytes).
-    Removing efile.o(i.OS_File_New), (40 bytes).
-    Removing efile.o(i.OS_File_Read), (6 bytes).
-    Removing efile.o(i.OS_File_Size), (6 bytes).
-    Removing efile.o(i.appendfat), (6 bytes).
-    Removing efile.o(i.findfreesector), (54 bytes).
-    Removing efile.o(i.max), (14 bytes).
-    Removing efile.o(i.testDirectory), (12 bytes).
-    Removing efile.o(.data), (8 bytes).
-    Removing texas.o(i.Encrypt), (104 bytes).
-    Removing texas.o(i.LogicAnalyzer), (20 bytes).
-    Removing texas.o(i.PeriodicTask2_Init), (188 bytes).
     Removing texas.o(i.PeriodicTask2_Stop), (36 bytes).
-    Removing texas.o(i.SetGrade), (204 bytes).
-    Removing texas.o(i.TExaS_Init), (5904 bytes).
     Removing texas.o(i.TExaS_Stop), (8 bytes).
     Removing texas.o(i.TExaS_Task0), (20 bytes).
     Removing texas.o(i.TExaS_Task1), (20 bytes).
@@ -499,23 +479,13 @@ Removing Unused input sections from the image.
     Removing texas.o(i.UART_InString), (66 bytes).
     Removing texas.o(i.UART_InUDec), (76 bytes).
     Removing texas.o(i.UART_InUHex), (104 bytes).
-    Removing texas.o(i.UART_Init), (164 bytes).
-    Removing texas.o(i.UART_OutChar), (24 bytes).
     Removing texas.o(i.UART_OutCharNonBlock), (12 bytes).
-    Removing texas.o(i.UART_OutString), (24 bytes).
-    Removing texas.o(i.UART_OutUDec), (42 bytes).
     Removing texas.o(i.UART_OutUDec4), (68 bytes).
     Removing texas.o(i.UART_OutUDec5), (68 bytes).
     Removing texas.o(i.UART_OutUFix1), (46 bytes).
-    Removing texas.o(i.UART_OutUHex), (52 bytes).
     Removing texas.o(i.fillmessage4b), (88 bytes).
     Removing texas.o(i.fillmessage5b), (128 bytes).
     Removing texas.o(i.fillmessageb), (72 bytes).
-    Removing texas.o(i.texasbuildbuff), (40 bytes).
-    Removing texas.o(i.texascompare), (34 bytes).
-    Removing texas.o(.bss), (1044 bytes).
-    Removing texas.o(.constdata), (72 bytes).
-    Removing texas.o(.conststring), (1162 bytes).
     Removing system_tm4c123.o(.rev16_text), (4 bytes).
     Removing system_tm4c123.o(.revsh_text), (4 bytes).
     Removing system_tm4c123.o(.rrx_text), (6 bytes).
@@ -524,7 +494,7 @@ Removing Unused input sections from the image.
     Removing system_tm4c123.o(i.getOscClk), (248 bytes).
     Removing system_tm4c123.o(.data), (4 bytes).
 
-131 unused section(s) (total 19748 bytes) removed from the image.
+88 unused section(s) (total 8268 bytes) removed from the image.
 
 ==============================================================================
 
@@ -536,50 +506,50 @@ Image Symbol Table
 
     RESET                                    0x00000000   Section      620  startup_tm4c123.o(RESET)
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
-    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
@@ -650,48 +620,96 @@ Image Symbol Table
     .text                                    0x000004ac   Section        2  use_no_semi.o(.text)
     .text                                    0x000004ae   Section        0  indicate_semi.o(.text)
     i.BSP_Button1_Init                       0x000004b0   Section        0  bsp.o(i.BSP_Button1_Init)
-    i.BSP_Button2_Init                       0x00000530   Section        0  bsp.o(i.BSP_Button2_Init)
-    i.BSP_Clock_InitFastest                  0x000005c0   Section        0  bsp.o(i.BSP_Clock_InitFastest)
-    i.BSP_Delay1ms                           0x0000064c   Section        0  bsp.o(i.BSP_Delay1ms)
-    i.BSP_LCD_DrawChar                       0x00000664   Section        0  bsp.o(i.BSP_LCD_DrawChar)
-    i.BSP_LCD_DrawString                     0x00000774   Section        0  bsp.o(i.BSP_LCD_DrawString)
-    i.BSP_LCD_FillRect                       0x000007cc   Section        0  bsp.o(i.BSP_LCD_FillRect)
-    i.BSP_LCD_FillScreen                     0x00000878   Section        0  bsp.o(i.BSP_LCD_FillScreen)
-    i.BSP_LCD_Init                           0x0000089c   Section        0  bsp.o(i.BSP_LCD_Init)
-    i.BSP_LCD_OutUDec                        0x000008a8   Section        0  bsp.o(i.BSP_LCD_OutUDec)
-    i.BSP_LCD_SetCursor                      0x00000938   Section        0  bsp.o(i.BSP_LCD_SetCursor)
-    i.EraseAddrValid                         0x00000958   Section        0  flashprogram.o(i.EraseAddrValid)
-    EraseAddrValid                           0x00000959   Thumb Code    22  flashprogram.o(i.EraseAddrValid)
-    i.Flash_Erase                            0x00000970   Section        0  flashprogram.o(i.Flash_Erase)
-    i.ST7735_InitR                           0x000009d4   Section        0  bsp.o(i.ST7735_InitR)
-    ST7735_InitR                             0x000009d5   Thumb Code    86  bsp.o(i.ST7735_InitR)
-    i.TIMER5A_Handler                        0x00000a48   Section        0  texas.o(i.TIMER5A_Handler)
-    i.WideTimer3A_Handler                    0x00000a60   Section        0  bsp.o(i.WideTimer3A_Handler)
-    i.WideTimer4A_Handler                    0x00000a78   Section        0  bsp.o(i.WideTimer4A_Handler)
-    i.WideTimer5A_Handler                    0x00000a90   Section        0  bsp.o(i.WideTimer5A_Handler)
-    i.commandList                            0x00000aa8   Section        0  bsp.o(i.commandList)
-    commandList                              0x00000aa9   Thumb Code    86  bsp.o(i.commandList)
-    i.commonInit                             0x00000b00   Section        0  bsp.o(i.commonInit)
-    commonInit                               0x00000b01   Thumb Code   452  bsp.o(i.commonInit)
-    i.eDisk_Format                           0x00000d04   Section        0  edisk.o(i.eDisk_Format)
-    i.fillmessage                            0x00000d5c   Section        0  bsp.o(i.fillmessage)
-    fillmessage                              0x00000d5d   Thumb Code    64  bsp.o(i.fillmessage)
-    i.lastsector                             0x00000da4   Section        0  efile.o(i.lastsector)
-    i.main                                   0x00000dd4   Section        0  lab5.o(i.main)
-    i.pushColor                              0x00000e0c   Section        0  bsp.o(i.pushColor)
-    pushColor                                0x00000e0d   Thumb Code    18  bsp.o(i.pushColor)
-    i.setAddrWindow                          0x00000e20   Section        0  bsp.o(i.setAddrWindow)
-    setAddrWindow                            0x00000e21   Thumb Code   106  bsp.o(i.setAddrWindow)
-    i.writecommand                           0x00000e94   Section        0  bsp.o(i.writecommand)
-    writecommand                             0x00000e95   Thumb Code    62  bsp.o(i.writecommand)
-    i.writedata                              0x00000edc   Section        0  bsp.o(i.writedata)
-    writedata                                0x00000edd   Thumb Code    64  bsp.o(i.writedata)
-    .constdata                               0x00000f24   Section     1403  bsp.o(.constdata)
-    Font                                     0x00000f24   Data        1275  bsp.o(.constdata)
-    Rcmd1                                    0x0000141f   Data          59  bsp.o(.constdata)
-    Rcmd2green                               0x0000145a   Data          13  bsp.o(.constdata)
-    Rcmd2red                                 0x00001467   Data          13  bsp.o(.constdata)
-    Rcmd3                                    0x00001474   Data          43  bsp.o(.constdata)
+    i.BSP_Button1_Input                      0x00000530   Section        0  bsp.o(i.BSP_Button1_Input)
+    i.BSP_Button2_Init                       0x0000053c   Section        0  bsp.o(i.BSP_Button2_Init)
+    i.BSP_Button2_Input                      0x000005cc   Section        0  bsp.o(i.BSP_Button2_Input)
+    i.BSP_Clock_GetFreq                      0x000005d8   Section        0  bsp.o(i.BSP_Clock_GetFreq)
+    i.BSP_Clock_InitFastest                  0x000005e4   Section        0  bsp.o(i.BSP_Clock_InitFastest)
+    i.BSP_Delay1ms                           0x00000670   Section        0  bsp.o(i.BSP_Delay1ms)
+    i.BSP_LCD_DrawChar                       0x00000688   Section        0  bsp.o(i.BSP_LCD_DrawChar)
+    i.BSP_LCD_DrawString                     0x00000798   Section        0  bsp.o(i.BSP_LCD_DrawString)
+    i.BSP_LCD_FillRect                       0x000007f0   Section        0  bsp.o(i.BSP_LCD_FillRect)
+    i.BSP_LCD_FillScreen                     0x0000089c   Section        0  bsp.o(i.BSP_LCD_FillScreen)
+    i.BSP_LCD_Init                           0x000008c0   Section        0  bsp.o(i.BSP_LCD_Init)
+    i.BSP_LCD_OutUDec4                       0x000008cc   Section        0  bsp.o(i.BSP_LCD_OutUDec4)
+    i.BSP_LCD_SetCursor                      0x00000954   Section        0  bsp.o(i.BSP_LCD_SetCursor)
+    i.BSP_Time_Init                          0x00000974   Section        0  bsp.o(i.BSP_Time_Init)
+    i.DisplayDirectory                       0x000009d8   Section        0  lab5.o(i.DisplayDirectory)
+    i.Encrypt                                0x00000af0   Section        0  texas.o(i.Encrypt)
+    Encrypt                                  0x00000af1   Thumb Code    86  texas.o(i.Encrypt)
+    i.EraseAddrValid                         0x00000b58   Section        0  flashprogram.o(i.EraseAddrValid)
+    EraseAddrValid                           0x00000b59   Thumb Code    22  flashprogram.o(i.EraseAddrValid)
+    i.Flash_Erase                            0x00000b70   Section        0  flashprogram.o(i.Flash_Erase)
+    i.Flash_FastWrite                        0x00000bd4   Section        0  flashprogram.o(i.Flash_FastWrite)
+    i.Flash_Write                            0x00000c5c   Section        0  flashprogram.o(i.Flash_Write)
+    i.Flash_WriteArray                       0x00000cc4   Section        0  flashprogram.o(i.Flash_WriteArray)
+    i.LogicAnalyzer                          0x00000cf4   Section        0  texas.o(i.LogicAnalyzer)
+    i.MassWriteAddrValid                     0x00000d08   Section        0  flashprogram.o(i.MassWriteAddrValid)
+    MassWriteAddrValid                       0x00000d09   Thumb Code    22  flashprogram.o(i.MassWriteAddrValid)
+    i.MountDirectory                         0x00000d20   Section        0  efile.o(i.MountDirectory)
+    i.OS_File_Append                         0x00000d78   Section        0  efile.o(i.OS_File_Append)
+    i.OS_File_Flush                          0x00000da8   Section        0  efile.o(i.OS_File_Flush)
+    i.OS_File_Format                         0x00000df8   Section        0  efile.o(i.OS_File_Format)
+    i.OS_File_New                            0x00000e04   Section        0  efile.o(i.OS_File_New)
+    i.OS_File_Read                           0x00000e2c   Section        0  efile.o(i.OS_File_Read)
+    i.OS_File_Size                           0x00000e70   Section        0  efile.o(i.OS_File_Size)
+    i.PeriodicTask2_Init                     0x00000ea8   Section        0  texas.o(i.PeriodicTask2_Init)
+    i.Profile_Init                           0x00000f64   Section        0  profile.o(i.Profile_Init)
+    i.ST7735_InitR                           0x00001138   Section        0  bsp.o(i.ST7735_InitR)
+    ST7735_InitR                             0x00001139   Thumb Code    86  bsp.o(i.ST7735_InitR)
+    i.SetGrade                               0x000011ac   Section        0  texas.o(i.SetGrade)
+    SetGrade                                 0x000011ad   Thumb Code   196  texas.o(i.SetGrade)
+    i.TExaS_Init                             0x00001278   Section        0  texas.o(i.TExaS_Init)
+    i.TIMER5A_Handler                        0x00002988   Section        0  texas.o(i.TIMER5A_Handler)
+    i.UART_Init                              0x000029a0   Section        0  texas.o(i.UART_Init)
+    i.UART_OutChar                           0x00002a44   Section        0  texas.o(i.UART_OutChar)
+    i.UART_OutString                         0x00002a5c   Section        0  texas.o(i.UART_OutString)
+    i.UART_OutUDec                           0x00002a74   Section        0  texas.o(i.UART_OutUDec)
+    i.UART_OutUHex                           0x00002a9e   Section        0  texas.o(i.UART_OutUHex)
+    i.WideTimer3A_Handler                    0x00002ad4   Section        0  bsp.o(i.WideTimer3A_Handler)
+    i.WideTimer4A_Handler                    0x00002aec   Section        0  bsp.o(i.WideTimer4A_Handler)
+    i.WideTimer5A_Handler                    0x00002b04   Section        0  bsp.o(i.WideTimer5A_Handler)
+    i.WriteAddrValid                         0x00002b1c   Section        0  flashprogram.o(i.WriteAddrValid)
+    WriteAddrValid                           0x00002b1d   Thumb Code    22  flashprogram.o(i.WriteAddrValid)
+    i.appendfat                              0x00002b34   Section        0  efile.o(i.appendfat)
+    i.commandList                            0x00002b68   Section        0  bsp.o(i.commandList)
+    commandList                              0x00002b69   Thumb Code    86  bsp.o(i.commandList)
+    i.commonInit                             0x00002bc0   Section        0  bsp.o(i.commonInit)
+    commonInit                               0x00002bc1   Thumb Code   452  bsp.o(i.commonInit)
+    i.eDisk_Format                           0x00002dc4   Section        0  edisk.o(i.eDisk_Format)
+    i.eDisk_Init                             0x00002de8   Section        0  edisk.o(i.eDisk_Init)
+    i.eDisk_ReadSector                       0x00002df4   Section        0  edisk.o(i.eDisk_ReadSector)
+    i.eDisk_WriteSector                      0x00002e28   Section        0  edisk.o(i.eDisk_WriteSector)
+    i.fillmessage                            0x00002e88   Section        0  bsp.o(i.fillmessage)
+    fillmessage                              0x00002e89   Thumb Code    64  bsp.o(i.fillmessage)
+    i.fillmessage4                           0x00002ed0   Section        0  bsp.o(i.fillmessage4)
+    fillmessage4                             0x00002ed1   Thumb Code    90  bsp.o(i.fillmessage4)
+    i.findfreesector                         0x00002f34   Section        0  efile.o(i.findfreesector)
+    i.lastsector                             0x00002f70   Section        0  efile.o(i.lastsector)
+    i.main                                   0x00002f90   Section        0  lab5.o(i.main)
+    i.max                                    0x00003290   Section        0  efile.o(i.max)
+    i.pushColor                              0x0000329e   Section        0  bsp.o(i.pushColor)
+    pushColor                                0x0000329f   Thumb Code    18  bsp.o(i.pushColor)
+    i.setAddrWindow                          0x000032b0   Section        0  bsp.o(i.setAddrWindow)
+    setAddrWindow                            0x000032b1   Thumb Code   106  bsp.o(i.setAddrWindow)
+    i.testbuildbuff                          0x00003324   Section        0  lab5.o(i.testbuildbuff)
+    i.texasbuildbuff                         0x00003354   Section        0  texas.o(i.texasbuildbuff)
+    texasbuildbuff                           0x00003355   Thumb Code    40  texas.o(i.texasbuildbuff)
+    i.texascompare                           0x0000337c   Section        0  texas.o(i.texascompare)
+    texascompare                             0x0000337d   Thumb Code    34  texas.o(i.texascompare)
+    i.writecommand                           0x000033a0   Section        0  bsp.o(i.writecommand)
+    writecommand                             0x000033a1   Thumb Code    62  bsp.o(i.writecommand)
+    i.writedata                              0x000033e8   Section        0  bsp.o(i.writedata)
+    writedata                                0x000033e9   Thumb Code    64  bsp.o(i.writedata)
+    .constdata                               0x00003430   Section     1403  bsp.o(.constdata)
+    Font                                     0x00003430   Data        1275  bsp.o(.constdata)
+    Rcmd1                                    0x0000392b   Data          59  bsp.o(.constdata)
+    Rcmd2green                               0x00003966   Data          13  bsp.o(.constdata)
+    Rcmd2red                                 0x00003973   Data          13  bsp.o(.constdata)
+    Rcmd3                                    0x00003980   Data          43  bsp.o(.constdata)
+    .constdata                               0x000039ac   Section       18  lab5.o(.constdata)
+    .constdata                               0x000039c0   Section       72  texas.o(.constdata)
+    .conststring                             0x00003a08   Section     1162  texas.o(.conststring)
     .data                                    0x20000000   Section       68  bsp.o(.data)
     ClockFrequency                           0x20000000   Data           4  bsp.o(.data)
     PWMCycles                                0x20000004   Data           2  bsp.o(.data)
@@ -699,15 +717,17 @@ Image Symbol Table
     RowStart                                 0x20000013   Data           1  bsp.o(.data)
     _width                                   0x20000014   Data           2  bsp.o(.data)
     _height                                  0x20000016   Data           2  bsp.o(.data)
-    .data                                    0x20000044   Section       24  texas.o(.data)
-    .bss                                     0x2000005c   Section       12  bsp.o(.bss)
-    .bss                                     0x20000068   Section     1024  efile.o(.bss)
-    .bss                                     0x20000468   Section       96  libspace.o(.bss)
-    HEAP                                     0x200004c8   Section        0  startup_tm4c123.o(HEAP)
-    STACK                                    0x200004c8   Section     1536  startup_tm4c123.o(STACK)
-    Heap_Mem                                 0x200004c8   Data           0  startup_tm4c123.o(HEAP)
-    Stack_Mem                                0x200004c8   Data        1536  startup_tm4c123.o(STACK)
-    __initial_sp                             0x20000ac8   Data           0  startup_tm4c123.o(STACK)
+    .data                                    0x20000044   Section        8  efile.o(.data)
+    .data                                    0x2000004c   Section       24  texas.o(.data)
+    .bss                                     0x20000064   Section       12  bsp.o(.bss)
+    .bss                                     0x20000070   Section     1024  efile.o(.bss)
+    .bss                                     0x20000470   Section     1044  texas.o(.bss)
+    .bss                                     0x20000884   Section       96  libspace.o(.bss)
+    HEAP                                     0x200008e8   Section        0  startup_tm4c123.o(HEAP)
+    STACK                                    0x200008e8   Section     1536  startup_tm4c123.o(STACK)
+    Heap_Mem                                 0x200008e8   Data           0  startup_tm4c123.o(HEAP)
+    Stack_Mem                                0x200008e8   Data        1536  startup_tm4c123.o(STACK)
+    __initial_sp                             0x20000ee8   Data           0  startup_tm4c123.o(STACK)
 
     Global Symbols
 
@@ -928,26 +948,61 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x000004ad   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x000004af   Thumb Code     0  indicate_semi.o(.text)
     BSP_Button1_Init                         0x000004b1   Thumb Code   112  bsp.o(i.BSP_Button1_Init)
-    BSP_Button2_Init                         0x00000531   Thumb Code   124  bsp.o(i.BSP_Button2_Init)
-    BSP_Clock_InitFastest                    0x000005c1   Thumb Code   126  bsp.o(i.BSP_Clock_InitFastest)
-    BSP_Delay1ms                             0x0000064d   Thumb Code    22  bsp.o(i.BSP_Delay1ms)
-    BSP_LCD_DrawChar                         0x00000665   Thumb Code   260  bsp.o(i.BSP_LCD_DrawChar)
-    BSP_LCD_DrawString                       0x00000775   Thumb Code    86  bsp.o(i.BSP_LCD_DrawString)
-    BSP_LCD_FillRect                         0x000007cd   Thumb Code   164  bsp.o(i.BSP_LCD_FillRect)
-    BSP_LCD_FillScreen                       0x00000879   Thumb Code    28  bsp.o(i.BSP_LCD_FillScreen)
-    BSP_LCD_Init                             0x0000089d   Thumb Code    10  bsp.o(i.BSP_LCD_Init)
-    BSP_LCD_OutUDec                          0x000008a9   Thumb Code   120  bsp.o(i.BSP_LCD_OutUDec)
-    BSP_LCD_SetCursor                        0x00000939   Thumb Code    22  bsp.o(i.BSP_LCD_SetCursor)
-    Flash_Erase                              0x00000971   Thumb Code    84  flashprogram.o(i.Flash_Erase)
-    TIMER5A_Handler                          0x00000a49   Thumb Code    16  texas.o(i.TIMER5A_Handler)
-    WideTimer3A_Handler                      0x00000a61   Thumb Code    16  bsp.o(i.WideTimer3A_Handler)
-    WideTimer4A_Handler                      0x00000a79   Thumb Code    16  bsp.o(i.WideTimer4A_Handler)
-    WideTimer5A_Handler                      0x00000a91   Thumb Code    16  bsp.o(i.WideTimer5A_Handler)
-    eDisk_Format                             0x00000d05   Thumb Code    66  edisk.o(i.eDisk_Format)
-    lastsector                               0x00000da5   Thumb Code    40  efile.o(i.lastsector)
-    main                                     0x00000dd5   Thumb Code    56  lab5.o(i.main)
-    Region$$Table$$Base                      0x000014a0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000014c0   Number         0  anon$$obj.o(Region$$Table)
+    BSP_Button1_Input                        0x00000531   Thumb Code     8  bsp.o(i.BSP_Button1_Input)
+    BSP_Button2_Init                         0x0000053d   Thumb Code   124  bsp.o(i.BSP_Button2_Init)
+    BSP_Button2_Input                        0x000005cd   Thumb Code     8  bsp.o(i.BSP_Button2_Input)
+    BSP_Clock_GetFreq                        0x000005d9   Thumb Code     6  bsp.o(i.BSP_Clock_GetFreq)
+    BSP_Clock_InitFastest                    0x000005e5   Thumb Code   126  bsp.o(i.BSP_Clock_InitFastest)
+    BSP_Delay1ms                             0x00000671   Thumb Code    22  bsp.o(i.BSP_Delay1ms)
+    BSP_LCD_DrawChar                         0x00000689   Thumb Code   260  bsp.o(i.BSP_LCD_DrawChar)
+    BSP_LCD_DrawString                       0x00000799   Thumb Code    86  bsp.o(i.BSP_LCD_DrawString)
+    BSP_LCD_FillRect                         0x000007f1   Thumb Code   164  bsp.o(i.BSP_LCD_FillRect)
+    BSP_LCD_FillScreen                       0x0000089d   Thumb Code    28  bsp.o(i.BSP_LCD_FillScreen)
+    BSP_LCD_Init                             0x000008c1   Thumb Code    10  bsp.o(i.BSP_LCD_Init)
+    BSP_LCD_OutUDec4                         0x000008cd   Thumb Code   116  bsp.o(i.BSP_LCD_OutUDec4)
+    BSP_LCD_SetCursor                        0x00000955   Thumb Code    22  bsp.o(i.BSP_LCD_SetCursor)
+    BSP_Time_Init                            0x00000975   Thumb Code    88  bsp.o(i.BSP_Time_Init)
+    DisplayDirectory                         0x000009d9   Thumb Code   254  lab5.o(i.DisplayDirectory)
+    Flash_Erase                              0x00000b71   Thumb Code    84  flashprogram.o(i.Flash_Erase)
+    Flash_FastWrite                          0x00000bd5   Thumb Code   114  flashprogram.o(i.Flash_FastWrite)
+    Flash_Write                              0x00000c5d   Thumb Code    88  flashprogram.o(i.Flash_Write)
+    Flash_WriteArray                         0x00000cc5   Thumb Code    46  flashprogram.o(i.Flash_WriteArray)
+    LogicAnalyzer                            0x00000cf5   Thumb Code    12  texas.o(i.LogicAnalyzer)
+    MountDirectory                           0x00000d21   Thumb Code    76  efile.o(i.MountDirectory)
+    OS_File_Append                           0x00000d79   Thumb Code    48  efile.o(i.OS_File_Append)
+    OS_File_Flush                            0x00000da9   Thumb Code    70  efile.o(i.OS_File_Flush)
+    OS_File_Format                           0x00000df9   Thumb Code    10  efile.o(i.OS_File_Format)
+    OS_File_New                              0x00000e05   Thumb Code    34  efile.o(i.OS_File_New)
+    OS_File_Read                             0x00000e2d   Thumb Code    58  efile.o(i.OS_File_Read)
+    OS_File_Size                             0x00000e71   Thumb Code    48  efile.o(i.OS_File_Size)
+    PeriodicTask2_Init                       0x00000ea9   Thumb Code   164  texas.o(i.PeriodicTask2_Init)
+    Profile_Init                             0x00000f65   Thumb Code   418  profile.o(i.Profile_Init)
+    TExaS_Init                               0x00001279   Thumb Code  5820  texas.o(i.TExaS_Init)
+    TIMER5A_Handler                          0x00002989   Thumb Code    16  texas.o(i.TIMER5A_Handler)
+    UART_Init                                0x000029a1   Thumb Code   148  texas.o(i.UART_Init)
+    UART_OutChar                             0x00002a45   Thumb Code    20  texas.o(i.UART_OutChar)
+    UART_OutString                           0x00002a5d   Thumb Code    24  texas.o(i.UART_OutString)
+    UART_OutUDec                             0x00002a75   Thumb Code    42  texas.o(i.UART_OutUDec)
+    UART_OutUHex                             0x00002a9f   Thumb Code    52  texas.o(i.UART_OutUHex)
+    WideTimer3A_Handler                      0x00002ad5   Thumb Code    16  bsp.o(i.WideTimer3A_Handler)
+    WideTimer4A_Handler                      0x00002aed   Thumb Code    16  bsp.o(i.WideTimer4A_Handler)
+    WideTimer5A_Handler                      0x00002b05   Thumb Code    16  bsp.o(i.WideTimer5A_Handler)
+    appendfat                                0x00002b35   Thumb Code    44  efile.o(i.appendfat)
+    eDisk_Format                             0x00002dc5   Thumb Code    36  edisk.o(i.eDisk_Format)
+    eDisk_Init                               0x00002de9   Thumb Code    12  edisk.o(i.eDisk_Init)
+    eDisk_ReadSector                         0x00002df5   Thumb Code    46  edisk.o(i.eDisk_ReadSector)
+    eDisk_WriteSector                        0x00002e29   Thumb Code    62  edisk.o(i.eDisk_WriteSector)
+    findfreesector                           0x00002f35   Thumb Code    56  efile.o(i.findfreesector)
+    lastsector                               0x00002f71   Thumb Code    28  efile.o(i.lastsector)
+    main                                     0x00002f91   Thumb Code   530  lab5.o(i.main)
+    max                                      0x00003291   Thumb Code    14  efile.o(i.max)
+    testbuildbuff                            0x00003325   Thumb Code    44  lab5.o(i.testbuildbuff)
+    ColorArray                               0x000039ac   Data          18  lab5.o(.constdata)
+    Key                                      0x000039c0   Data           8  texas.o(.constdata)
+    Scramble                                 0x000039c8   Data          32  texas.o(.constdata)
+    DeScramble                               0x000039e8   Data          32  texas.o(.constdata)
+    Region$$Table$$Base                      0x00003e94   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00003eb4   Number         0  anon$$obj.o(Region$$Table)
     StX                                      0x20000008   Data           4  bsp.o(.data)
     StY                                      0x2000000c   Data           4  bsp.o(.data)
     StTextColor                              0x20000010   Data           2  bsp.o(.data)
@@ -962,17 +1017,23 @@ Image Symbol Table
     PeriodicTaskC                            0x20000038   Data           4  bsp.o(.data)
     LightBusy                                0x2000003c   Data           4  bsp.o(.data)
     TempBusy                                 0x20000040   Data           4  bsp.o(.data)
-    LogicData                                0x20000044   Data           1  texas.o(.data)
-    Id                                       0x20000048   Data           4  texas.o(.data)
-    PeriodicTask2                            0x2000004c   Data           4  texas.o(.data)
-    Messageindexb                            0x20000050   Data           4  texas.o(.data)
-    Messageb                                 0x20000054   Data           8  texas.o(.data)
-    Message                                  0x2000005c   Data          12  bsp.o(.bss)
-    Buff                                     0x20000068   Data         512  efile.o(.bss)
-    Directory                                0x20000268   Data         256  efile.o(.bss)
-    FAT                                      0x20000368   Data         256  efile.o(.bss)
-    __libspace_start                         0x20000468   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x200004c8   Data           0  libspace.o(.bss)
+    bDirectoryLoaded                         0x20000044   Data           4  efile.o(.data)
+    fileNo                                   0x20000048   Data           4  efile.o(.data)
+    LogicData                                0x2000004c   Data           1  texas.o(.data)
+    Id                                       0x20000050   Data           4  texas.o(.data)
+    PeriodicTask2                            0x20000054   Data           4  texas.o(.data)
+    Messageindexb                            0x20000058   Data           4  texas.o(.data)
+    Messageb                                 0x2000005c   Data           8  texas.o(.data)
+    Message                                  0x20000064   Data          12  bsp.o(.bss)
+    Buff                                     0x20000070   Data         512  efile.o(.bss)
+    Directory                                0x20000270   Data         256  efile.o(.bss)
+    FAT                                      0x20000370   Data         256  efile.o(.bss)
+    MagicCode                                0x20000470   Data          10  texas.o(.bss)
+    EncriptedMagicCode                       0x2000047a   Data          10  texas.o(.bss)
+    blockBuffer                              0x20000484   Data         512  texas.o(.bss)
+    readBuffer                               0x20000684   Data         512  texas.o(.bss)
+    __libspace_start                         0x20000884   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200008e4   Data           0  libspace.o(.bss)
 
 
 
@@ -982,128 +1043,179 @@ Memory Map of the image
 
   Image Entry point : 0x00000311
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x0000151c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00003f18, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x000014c0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00003eb4, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x0000026c   Data   RO          963    RESET               startup_tm4c123.o
-    0x0000026c   0x00000008   Code   RO         1035  * !!!main             c_w.l(__main.o)
-    0x00000274   0x00000034   Code   RO         1192    !!!scatter          c_w.l(__scatter.o)
-    0x000002a8   0x0000001a   Code   RO         1194    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x0000026c   0x00000008   Code   RO         1029  * !!!main             c_w.l(__main.o)
+    0x00000274   0x00000034   Code   RO         1186    !!!scatter          c_w.l(__scatter.o)
+    0x000002a8   0x0000001a   Code   RO         1188    !!handler_copy      c_w.l(__scatter_copy.o)
     0x000002c2   0x00000002   PAD
-    0x000002c4   0x0000001c   Code   RO         1196    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x000002e0   0x00000002   Code   RO         1062    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x000002e2   0x00000000   Code   RO         1069    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1071    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1074    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1076    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1078    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1081    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1083    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1085    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1087    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1089    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1091    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1093    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1095    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1097    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1099    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1101    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1105    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1107    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1109    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x000002e2   0x00000000   Code   RO         1111    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x000002e2   0x00000002   Code   RO         1112    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x000002e4   0x00000002   Code   RO         1132    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x000002e6   0x00000000   Code   RO         1145    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x000002e6   0x00000000   Code   RO         1147    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x000002e6   0x00000000   Code   RO         1150    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x000002e6   0x00000000   Code   RO         1153    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x000002e6   0x00000000   Code   RO         1155    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x000002e6   0x00000000   Code   RO         1158    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x000002e6   0x00000002   Code   RO         1159    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x000002e8   0x00000000   Code   RO         1037    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x000002e8   0x00000000   Code   RO         1039    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x000002e8   0x00000006   Code   RO         1051    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x000002ee   0x00000000   Code   RO         1041    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x000002ee   0x00000004   Code   RO         1042    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x000002f2   0x00000000   Code   RO         1044    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x000002f2   0x00000008   Code   RO         1045    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x000002fa   0x00000002   Code   RO         1066    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x000002fc   0x00000000   Code   RO         1114    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x000002fc   0x00000004   Code   RO         1115    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x00000300   0x00000006   Code   RO         1116    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x000002c4   0x0000001c   Code   RO         1190    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002e0   0x00000002   Code   RO         1056    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002e2   0x00000000   Code   RO         1063    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1065    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1068    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1070    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1072    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1075    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1077    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1079    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1081    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1083    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1085    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1087    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1089    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1091    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1093    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1095    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1099    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1101    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1103    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002e2   0x00000000   Code   RO         1105    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x000002e2   0x00000002   Code   RO         1106    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x000002e4   0x00000002   Code   RO         1126    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002e6   0x00000000   Code   RO         1139    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x000002e6   0x00000000   Code   RO         1141    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x000002e6   0x00000000   Code   RO         1144    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x000002e6   0x00000000   Code   RO         1147    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x000002e6   0x00000000   Code   RO         1149    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x000002e6   0x00000000   Code   RO         1152    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x000002e6   0x00000002   Code   RO         1153    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x000002e8   0x00000000   Code   RO         1031    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x000002e8   0x00000000   Code   RO         1033    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x000002e8   0x00000006   Code   RO         1045    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x000002ee   0x00000000   Code   RO         1035    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x000002ee   0x00000004   Code   RO         1036    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x000002f2   0x00000000   Code   RO         1038    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x000002f2   0x00000008   Code   RO         1039    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x000002fa   0x00000002   Code   RO         1060    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x000002fc   0x00000000   Code   RO         1108    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x000002fc   0x00000004   Code   RO         1109    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000300   0x00000006   Code   RO         1110    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x00000306   0x00000002   PAD
     0x00000308   0x00000006   Code   RO            1    .emb_text           bsp.o
     0x0000030e   0x00000002   PAD
     0x00000310   0x00000124   Code   RO          964  * .text               startup_tm4c123.o
-    0x00000434   0x00000006   Code   RO         1033    .text               c_w.l(heapauxi.o)
-    0x0000043a   0x0000004a   Code   RO         1053    .text               c_w.l(sys_stackheap_outer.o)
-    0x00000484   0x00000012   Code   RO         1055    .text               c_w.l(exit.o)
+    0x00000434   0x00000006   Code   RO         1027    .text               c_w.l(heapauxi.o)
+    0x0000043a   0x0000004a   Code   RO         1047    .text               c_w.l(sys_stackheap_outer.o)
+    0x00000484   0x00000012   Code   RO         1049    .text               c_w.l(exit.o)
     0x00000496   0x00000002   PAD
-    0x00000498   0x00000008   Code   RO         1063    .text               c_w.l(libspace.o)
-    0x000004a0   0x0000000c   Code   RO         1124    .text               c_w.l(sys_exit.o)
-    0x000004ac   0x00000002   Code   RO         1135    .text               c_w.l(use_no_semi.o)
-    0x000004ae   0x00000000   Code   RO         1137    .text               c_w.l(indicate_semi.o)
+    0x00000498   0x00000008   Code   RO         1057    .text               c_w.l(libspace.o)
+    0x000004a0   0x0000000c   Code   RO         1118    .text               c_w.l(sys_exit.o)
+    0x000004ac   0x00000002   Code   RO         1129    .text               c_w.l(use_no_semi.o)
+    0x000004ae   0x00000000   Code   RO         1131    .text               c_w.l(indicate_semi.o)
     0x000004ae   0x00000002   PAD
     0x000004b0   0x00000080   Code   RO            4    i.BSP_Button1_Init  bsp.o
-    0x00000530   0x00000090   Code   RO            6    i.BSP_Button2_Init  bsp.o
-    0x000005c0   0x0000008c   Code   RO           11    i.BSP_Clock_InitFastest  bsp.o
-    0x0000064c   0x00000016   Code   RO           12    i.BSP_Delay1ms      bsp.o
-    0x00000662   0x00000002   PAD
-    0x00000664   0x00000110   Code   RO           17    i.BSP_LCD_DrawChar  bsp.o
-    0x00000774   0x00000056   Code   RO           22    i.BSP_LCD_DrawString  bsp.o
-    0x000007ca   0x00000002   PAD
-    0x000007cc   0x000000ac   Code   RO           24    i.BSP_LCD_FillRect  bsp.o
-    0x00000878   0x00000024   Code   RO           25    i.BSP_LCD_FillScreen  bsp.o
-    0x0000089c   0x0000000a   Code   RO           26    i.BSP_LCD_Init      bsp.o
-    0x000008a6   0x00000002   PAD
-    0x000008a8   0x00000090   Code   RO           27    i.BSP_LCD_OutUDec   bsp.o
-    0x00000938   0x00000020   Code   RO           34    i.BSP_LCD_SetCursor  bsp.o
-    0x00000958   0x00000016   Code   RO          538    i.EraseAddrValid    flashprogram.o
-    0x0000096e   0x00000002   PAD
-    0x00000970   0x00000064   Code   RO          539    i.Flash_Erase       flashprogram.o
-    0x000009d4   0x00000074   Code   RO           63    i.ST7735_InitR      bsp.o
-    0x00000a48   0x00000018   Code   RO          750    i.TIMER5A_Handler   texas.o
-    0x00000a60   0x00000018   Code   RO           64    i.WideTimer3A_Handler  bsp.o
-    0x00000a78   0x00000018   Code   RO           65    i.WideTimer4A_Handler  bsp.o
-    0x00000a90   0x00000018   Code   RO           66    i.WideTimer5A_Handler  bsp.o
-    0x00000aa8   0x00000056   Code   RO           68    i.commandList       bsp.o
-    0x00000afe   0x00000002   PAD
-    0x00000b00   0x00000204   Code   RO           69    i.commonInit        bsp.o
-    0x00000d04   0x00000058   Code   RO          499    i.eDisk_Format      edisk.o
-    0x00000d5c   0x00000048   Code   RO           70    i.fillmessage       bsp.o
-    0x00000da4   0x00000030   Code   RO          663    i.lastsector        efile.o
-    0x00000dd4   0x00000038   Code   RO          590    i.main              lab5.o
-    0x00000e0c   0x00000012   Code   RO           78    i.pushColor         bsp.o
-    0x00000e1e   0x00000002   PAD
-    0x00000e20   0x00000074   Code   RO           79    i.setAddrWindow     bsp.o
-    0x00000e94   0x00000048   Code   RO           82    i.writecommand      bsp.o
-    0x00000edc   0x00000048   Code   RO           83    i.writedata         bsp.o
-    0x00000f24   0x0000057b   Data   RO           85    .constdata          bsp.o
-    0x0000149f   0x00000001   PAD
-    0x000014a0   0x00000020   Data   RO         1190    Region$$Table       anon$$obj.o
+    0x00000530   0x0000000c   Code   RO            5    i.BSP_Button1_Input  bsp.o
+    0x0000053c   0x00000090   Code   RO            6    i.BSP_Button2_Init  bsp.o
+    0x000005cc   0x0000000c   Code   RO            7    i.BSP_Button2_Input  bsp.o
+    0x000005d8   0x0000000c   Code   RO           10    i.BSP_Clock_GetFreq  bsp.o
+    0x000005e4   0x0000008c   Code   RO           11    i.BSP_Clock_InitFastest  bsp.o
+    0x00000670   0x00000016   Code   RO           12    i.BSP_Delay1ms      bsp.o
+    0x00000686   0x00000002   PAD
+    0x00000688   0x00000110   Code   RO           17    i.BSP_LCD_DrawChar  bsp.o
+    0x00000798   0x00000056   Code   RO           22    i.BSP_LCD_DrawString  bsp.o
+    0x000007ee   0x00000002   PAD
+    0x000007f0   0x000000ac   Code   RO           24    i.BSP_LCD_FillRect  bsp.o
+    0x0000089c   0x00000024   Code   RO           25    i.BSP_LCD_FillScreen  bsp.o
+    0x000008c0   0x0000000a   Code   RO           26    i.BSP_LCD_Init      bsp.o
+    0x000008ca   0x00000002   PAD
+    0x000008cc   0x00000088   Code   RO           28    i.BSP_LCD_OutUDec4  bsp.o
+    0x00000954   0x00000020   Code   RO           34    i.BSP_LCD_SetCursor  bsp.o
+    0x00000974   0x00000064   Code   RO           59    i.BSP_Time_Init     bsp.o
+    0x000009d8   0x00000118   Code   RO          589    i.DisplayDirectory  lab5.o
+    0x00000af0   0x00000068   Code   RO          736    i.Encrypt           texas.o
+    0x00000b58   0x00000016   Code   RO          538    i.EraseAddrValid    flashprogram.o
+    0x00000b6e   0x00000002   PAD
+    0x00000b70   0x00000064   Code   RO          539    i.Flash_Erase       flashprogram.o
+    0x00000bd4   0x00000088   Code   RO          540    i.Flash_FastWrite   flashprogram.o
+    0x00000c5c   0x00000068   Code   RO          542    i.Flash_Write       flashprogram.o
+    0x00000cc4   0x0000002e   Code   RO          543    i.Flash_WriteArray  flashprogram.o
+    0x00000cf2   0x00000002   PAD
+    0x00000cf4   0x00000014   Code   RO          737    i.LogicAnalyzer     texas.o
+    0x00000d08   0x00000016   Code   RO          544    i.MassWriteAddrValid  flashprogram.o
+    0x00000d1e   0x00000002   PAD
+    0x00000d20   0x00000058   Code   RO          660    i.MountDirectory    efile.o
+    0x00000d78   0x00000030   Code   RO          661    i.OS_File_Append    efile.o
+    0x00000da8   0x00000050   Code   RO          662    i.OS_File_Flush     efile.o
+    0x00000df8   0x0000000a   Code   RO          663    i.OS_File_Format    efile.o
+    0x00000e02   0x00000002   PAD
+    0x00000e04   0x00000028   Code   RO          664    i.OS_File_New       efile.o
+    0x00000e2c   0x00000044   Code   RO          665    i.OS_File_Read      efile.o
+    0x00000e70   0x00000038   Code   RO          666    i.OS_File_Size      efile.o
+    0x00000ea8   0x000000bc   Code   RO          738    i.PeriodicTask2_Init  texas.o
+    0x00000f64   0x000001d4   Code   RO          643    i.Profile_Init      profile.o
+    0x00001138   0x00000074   Code   RO           63    i.ST7735_InitR      bsp.o
+    0x000011ac   0x000000cc   Code   RO          740    i.SetGrade          texas.o
+    0x00001278   0x00001710   Code   RO          741    i.TExaS_Init        texas.o
+    0x00002988   0x00000018   Code   RO          750    i.TIMER5A_Handler   texas.o
+    0x000029a0   0x000000a4   Code   RO          756    i.UART_Init         texas.o
+    0x00002a44   0x00000018   Code   RO          757    i.UART_OutChar      texas.o
+    0x00002a5c   0x00000018   Code   RO          759    i.UART_OutString    texas.o
+    0x00002a74   0x0000002a   Code   RO          760    i.UART_OutUDec      texas.o
+    0x00002a9e   0x00000034   Code   RO          764    i.UART_OutUHex      texas.o
+    0x00002ad2   0x00000002   PAD
+    0x00002ad4   0x00000018   Code   RO           64    i.WideTimer3A_Handler  bsp.o
+    0x00002aec   0x00000018   Code   RO           65    i.WideTimer4A_Handler  bsp.o
+    0x00002b04   0x00000018   Code   RO           66    i.WideTimer5A_Handler  bsp.o
+    0x00002b1c   0x00000016   Code   RO          545    i.WriteAddrValid    flashprogram.o
+    0x00002b32   0x00000002   PAD
+    0x00002b34   0x00000034   Code   RO          667    i.appendfat         efile.o
+    0x00002b68   0x00000056   Code   RO           68    i.commandList       bsp.o
+    0x00002bbe   0x00000002   PAD
+    0x00002bc0   0x00000204   Code   RO           69    i.commonInit        bsp.o
+    0x00002dc4   0x00000024   Code   RO          499    i.eDisk_Format      edisk.o
+    0x00002de8   0x0000000c   Code   RO          500    i.eDisk_Init        edisk.o
+    0x00002df4   0x00000034   Code   RO          501    i.eDisk_ReadSector  edisk.o
+    0x00002e28   0x00000060   Code   RO          502    i.eDisk_WriteSector  edisk.o
+    0x00002e88   0x00000048   Code   RO           70    i.fillmessage       bsp.o
+    0x00002ed0   0x00000064   Code   RO           73    i.fillmessage4      bsp.o
+    0x00002f34   0x0000003c   Code   RO          668    i.findfreesector    efile.o
+    0x00002f70   0x00000020   Code   RO          669    i.lastsector        efile.o
+    0x00002f90   0x00000300   Code   RO          590    i.main              lab5.o
+    0x00003290   0x0000000e   Code   RO          670    i.max               efile.o
+    0x0000329e   0x00000012   Code   RO           78    i.pushColor         bsp.o
+    0x000032b0   0x00000074   Code   RO           79    i.setAddrWindow     bsp.o
+    0x00003324   0x00000030   Code   RO          594    i.testbuildbuff     lab5.o
+    0x00003354   0x00000028   Code   RO          768    i.texasbuildbuff    texas.o
+    0x0000337c   0x00000022   Code   RO          769    i.texascompare      texas.o
+    0x0000339e   0x00000002   PAD
+    0x000033a0   0x00000048   Code   RO           82    i.writecommand      bsp.o
+    0x000033e8   0x00000048   Code   RO           83    i.writedata         bsp.o
+    0x00003430   0x0000057b   Data   RO           85    .constdata          bsp.o
+    0x000039ab   0x00000001   PAD
+    0x000039ac   0x00000012   Data   RO          595    .constdata          lab5.o
+    0x000039be   0x00000002   PAD
+    0x000039c0   0x00000048   Data   RO          771    .constdata          texas.o
+    0x00003a08   0x0000048a   Data   RO          772    .conststring        texas.o
+    0x00003e92   0x00000002   PAD
+    0x00003e94   0x00000020   Data   RO         1184    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Base: 0x20000000, Size: 0x0000005c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000064, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x00000044   Data   RW           86    .data               bsp.o
-    0x20000044   0x00000018   Data   RW          773    .data               texas.o
+    0x20000044   0x00000008   Data   RW          672    .data               efile.o
+    0x2000004c   0x00000018   Data   RW          773    .data               texas.o
 
 
-    Execution Region ER_ZI (Base: 0x2000005c, Size: 0x00000a6c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Base: 0x20000064, Size: 0x00000e84, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2000005c   0x0000000c   Zero   RW           84    .bss                bsp.o
-    0x20000068   0x00000400   Zero   RW          666    .bss                efile.o
-    0x20000468   0x00000060   Zero   RW         1064    .bss                c_w.l(libspace.o)
-    0x200004c8   0x00000000   Zero   RW          962    HEAP                startup_tm4c123.o
-    0x200004c8   0x00000600   Zero   RW          961    STACK               startup_tm4c123.o
+    0x20000064   0x0000000c   Zero   RW           84    .bss                bsp.o
+    0x20000070   0x00000400   Zero   RW          671    .bss                efile.o
+    0x20000470   0x00000414   Zero   RW          770    .bss                texas.o
+    0x20000884   0x00000060   Zero   RW         1058    .bss                c_w.l(libspace.o)
+    0x200008e4   0x00000004   PAD
+    0x200008e8   0x00000000   Zero   RW          962    HEAP                startup_tm4c123.o
+    0x200008e8   0x00000600   Zero   RW          961    STACK               startup_tm4c123.o
 
 
 ==============================================================================
@@ -1113,18 +1225,19 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      2332        266       1403         68         12      19626   bsp.o
-        88         22          0          0          0        835   edisk.o
-        48          8          0          0       1024       1206   efile.o
-       122         16          0          0          0       1070   flashprogram.o
-        56          0          0          0          0       1056   lab5.o
+      2560        298       1403         68         12      21827   bsp.o
+       196         40          0          0          0       2975   edisk.o
+       548         62          0          8       1024       6904   efile.o
+       452         54          0          0          0       4933   flashprogram.o
+      1096        268         18          0          0       2960   lab5.o
+       468         50          0          0          0        523   profile.o
        292         18        620          0       1536       5660   startup_tm4c123.o
-        24          8          0         24          0       4798   texas.o
+      6824       3174       1234         24       1044      13678   texas.o
 
     ----------------------------------------------------------------------
-      2976        338       2056         92       2572      34251   Object Totals
+     12460       3964       3312        100       3616      59460   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        14          0          1          0          0          0   (incl. Padding)
+        24          0          5          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1152,8 +1265,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-       280         16          0          0         96        584   Library Totals
-         8          0          0          0          0          0   (incl. Padding)
+       280         16          0          0        100        584   Library Totals
+         8          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1162,7 +1275,7 @@ Image component sizes
        272         16          0          0         96        584   c_w.l
 
     ----------------------------------------------------------------------
-       280         16          0          0         96        584   Library Totals
+       280         16          0          0        100        584   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1171,15 +1284,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3256        354       2056         92       2668      33323   Grand Totals
-      3256        354       2056         92       2668      33323   ELF Image Totals
-      3256        354       2056         92          0          0   ROM Totals
+     12740       3980       3312        100       3716      56608   Grand Totals
+     12740       3980       3312        100       3716      56608   ELF Image Totals
+     12740       3980       3312        100          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5312 (   5.19kB)
-    Total RW  Size (RW Data + ZI Data)              2760 (   2.70kB)
-    Total ROM Size (Code + RO Data + RW Data)       5404 (   5.28kB)
+    Total RO  Size (Code + RO Data)                16052 (  15.68kB)
+    Total RW  Size (RW Data + ZI Data)              3816 (   3.73kB)
+    Total ROM Size (Code + RO Data + RW Data)      16152 (  15.77kB)
 
 ==============================================================================
 

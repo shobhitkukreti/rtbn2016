@@ -134,7 +134,9 @@ void DisplayDirectory(uint8_t index){
   uint16_t dirclr[256], fatclr[256];
   volatile uint8_t *diraddr = (volatile uint8_t *)(EDISK_ADDR_MAX - 511); /* address of directory */
   volatile uint8_t *fataddr = (volatile uint8_t *)(EDISK_ADDR_MAX - 255); /* address of FAT */
-  int i, j;
+  // uint8_t *diraddr = &Directory[0];
+	// uint8_t *fataddr = &FAT[0];
+	int i, j;
   // set default color to gray
   for(i=0; i<256; i=i+1){
     dirclr[i] = LCD_GRAY;
@@ -173,56 +175,9 @@ void DisplayDirectory(uint8_t index){
   }
 }
 
-extern uint8_t lastsector(uint8_t start);
-int main() {
-	
-	int x=0;
-	volatile uint8_t Buff2[512];
-	DisableInterrupts();
-  BSP_Clock_InitFastest();
-  BSP_Button1_Init();
-  BSP_Button2_Init();
-  BSP_LCD_Init();
-  BSP_LCD_FillScreen(LCD_BLUE);
-	
-	eDisk_Format();
-	int fs = lastsector(0);
-	BSP_LCD_OutUDec(fs, LCD_YELLOW);
-		
-	
-	return 0;
-}
 
 
-int main_step1() {
-	
-	int x=0;
-	volatile uint8_t Buff2[512];
-	DisableInterrupts();
-  BSP_Clock_InitFastest();
-  BSP_Button1_Init();
-  BSP_Button2_Init();
-  BSP_LCD_Init();
-  BSP_LCD_FillScreen(LCD_BLUE);
-	
-	eDisk_Init(0);
-	eDisk_Format();
-	testbuildbuff("test0 test1 test2");
-		
-	eDisk_WriteSector(Buff,0);
-	eDisk_ReadSector(Buff2,0);
-	
-	for(x=0; x<512; x++)
-				if(Buff[x]!=Buff2[x])
-							BSP_LCD_DrawString(0,10, "WR-RD Failed", LCD_GREEN);
-				else	
-							BSP_LCD_DrawString(0,11, "WR-RD Passed", LCD_GREEN);
-	return 0;
-	
-}
-
-
-int main1(void){
+int main(void){
   uint8_t m, n, p;              // file numbers
   uint8_t index = 0;            // row index
   volatile int i;
@@ -230,6 +185,7 @@ int main1(void){
   BSP_Clock_InitFastest();
   Profile_Init();               // initialize the 7 hardware profiling pins
   eDisk_Init(0);
+	
   BSP_Button1_Init();
   BSP_Button2_Init();
   BSP_LCD_Init();
@@ -238,7 +194,7 @@ int main1(void){
   if(BSP_Button1_Input() == 0){ // run TExaS if Button1 is pressed
     BSP_LCD_DrawString(0, 0, "Running TExaS grader", LCD_YELLOW);
     // change 1000 to 4-digit number from edX
-    TExaS_Init(GRADER, 1000);   // initialize the Lab 5 grader
+    TExaS_Init(GRADER, 9638);   // initialize the Lab 5 grader
 //    TExaS_Init(LOGICANALYZER, 1000);  
 // Logic analyzer will run, but the Lab 5 doesn't really use the logic analyzer
     while(BSP_Button1_Input() == 0){};
@@ -246,7 +202,6 @@ int main1(void){
   }
   if(BSP_Button2_Input() == 0){ // erase if Button2 is pressed
     BSP_LCD_DrawString(0, 0, "Erasing entire disk", LCD_YELLOW);
-    OS_File_Format();
     while(BSP_Button2_Input() == 0){};
     BSP_LCD_DrawString(0, 0, "                   ", LCD_YELLOW);
   }
@@ -268,8 +223,10 @@ int main1(void){
   OS_File_Append(n, Buff);      // 0x00020C00
   testbuildbuff("buf7");
   OS_File_Append(n, Buff);      // 0x00020E00
-  m = OS_File_New();            // m = 1, 4, 7, 10, ...
-  testbuildbuff("dat0");
+  
+	m = OS_File_New();            // m = 1, 4, 7, 10, ...
+  
+	testbuildbuff("dat0");
   OS_File_Append(m, Buff);      // 0x00021000
   testbuildbuff("dat1");
   OS_File_Append(m, Buff);      // 0x00021200
@@ -290,11 +247,14 @@ int main1(void){
   OS_File_Append(p, Buff);      // 0x00022000
   testbuildbuff("dat4");
   OS_File_Append(m, Buff);      // 0x00022200
-  i = OS_File_Size(n);          // i = 10 
-  i = OS_File_Size(m);          // i = 5
+  
+	i = OS_File_Size(n);          // i = 10 
+  
+	i = OS_File_Size(m);          // i = 5
   i = OS_File_Size(p);          // i = 3
   i = OS_File_Size(p+1);        // i = 0
-  OS_File_Flush();              // 0x0003FE00
+  
+	OS_File_Flush();              // 0x0003FE00
   while(1){
     DisplayDirectory(index);
     while((BSP_Button1_Input() != 0) && (BSP_Button2_Input() != 0)){};
@@ -312,4 +272,74 @@ int main1(void){
     }
     while((BSP_Button1_Input() == 0) || (BSP_Button2_Input() == 0)){};
   }
+}
+
+
+
+
+/* For Testing the lab in steps */
+
+extern uint8_t lastsector(uint8_t start);
+extern uint8_t findfreesector(void);
+
+void testDirectory()
+{
+	Directory[0]=0;
+	FAT[0]=1;
+	FAT[1]=3;
+	Directory[1]=2;
+	FAT[2]=4;
+	FAT[3]=255;
+	FAT[4]=5;
+	FAT[5]=6;
+	FAT[6]=255;
+	
+}
+
+int main_step2() {
+	
+	
+	volatile uint8_t Buff2[512];
+	DisableInterrupts();
+  BSP_Clock_InitFastest();
+  BSP_Button1_Init();
+  BSP_Button2_Init();
+  BSP_LCD_Init();
+  BSP_LCD_FillScreen(LCD_BLUE);
+	testDirectory();
+//	eDisk_Format();
+	uint16_t size = OS_File_Size(0);
+	BSP_LCD_OutUDec(size, LCD_YELLOW);
+	size = OS_File_Size(1);	
+	BSP_LCD_OutUDec(size, LCD_YELLOW);
+	
+	return 0;
+}
+
+
+int main_step1() {
+	
+	int x=0;
+	uint8_t Buff2[512];
+	DisableInterrupts();
+  BSP_Clock_InitFastest();
+  BSP_Button1_Init();
+  BSP_Button2_Init();
+  BSP_LCD_Init();
+  BSP_LCD_FillScreen(LCD_BLUE);
+	
+	eDisk_Init(0);
+	eDisk_Format();
+	testbuildbuff("test0 test1 test2");
+		
+	eDisk_WriteSector(Buff,0);
+	eDisk_ReadSector(Buff2,0);
+	
+	for(x=0; x<512; x++)
+				if(Buff[x]!=Buff2[x])
+							BSP_LCD_DrawString(0,10, "WR-RD Failed", LCD_GREEN);
+				else	
+							BSP_LCD_DrawString(0,11, "WR-RD Passed", LCD_GREEN);
+	return 0;
+	
 }
